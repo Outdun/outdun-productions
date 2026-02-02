@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /banners/
+Disallow: /.git/
+
+Sitemap: https://outdunproductions.com/sitemap.xml

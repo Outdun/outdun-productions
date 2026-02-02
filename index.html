@@ -9,13 +9,19 @@
   <meta property="og:description" content="Video production company based in Squamish, BC. We craft compelling visual stories that inspire and create impact.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://outdunproductions.com">
-  <meta property="og:image" content="https://outdunproductions.com/logos/outdun_favicon.png">
-  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://outdunproductions.com">
+  <meta property="og:image" content="https://outdunproductions.com/banners/og_image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://outdunproductions.com/banners/og_image.png">
+  <meta name="twitter:image:alt" content="Outdun Productions - Dream | Create | Impact">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="logos/outdun_favicon.png">
-  <link rel="preload" as="video" href="videos/website_homepage_demo_reel_1080p_Compressed.mp4">
+  <link rel="apple-touch-icon" href="logos/outdun_favicon.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +36,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -46,7 +52,7 @@
       Drop your video file into the outdun-productions folder.
       Best format: MP4 (H.264), 1920x1080, under 15MB for fast loading.
     -->
-    <video class="hero__video" autoplay muted loop playsinline>
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata">
       <source src="videos/website_homepage_demo_reel_1080p_Compressed.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay"></div>
@@ -217,9 +223,9 @@
         <div class="footer__social">
           <p class="footer__heading">Follow Us</p>
           <div class="footer__social-links">
-            <a href="https://www.instagram.com/outdunproductions" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.instagram.com/outdunproductions" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
 
-            <a href="https://www.linkedin.com/company/outdun-productions" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.linkedin.com/company/outdun-productions" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
       </div>
@@ -233,7 +239,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "VideoProductionCompany",
+    "@type": "LocalBusiness",
     "name": "Outdun Productions",
     "description": "Video production company based in Squamish, BC crafting compelling visual stories that inspire and create impact.",
     "url": "https://outdunproductions.com",
@@ -246,7 +252,12 @@
       "addressCountry": "CA"
     },
     "openingHours": "Mo-Fr 09:00-18:00",
-    "image": "https://outdunproductions.com/logos/outdun_favicon.png"
+    "image": "https://outdunproductions.com/banners/og_image.png",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/outdunproductions",
+      "https://www.linkedin.com/company/outdun-productions"
+    ]
   }
   </script>
 </body>

@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Outdun Productions</title>
+  <title>Contact Us - Video Production Squamish BC | Outdun Productions</title>
   <meta name="description" content="Get in touch with Outdun Productions. Based in Squamish, BC - let's discuss your next video production project.">
-  <meta property="og:title" content="Contact | Outdun Productions">
+  <meta property="og:title" content="Contact Us - Video Production Squamish BC | Outdun Productions">
   <meta property="og:description" content="Get in touch with Outdun Productions. Based in Squamish, BC - let's discuss your next video production project.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://outdunproductions.com/contact">
-  <meta property="og:image" content="https://outdunproductions.com/logos/outdun_favicon.png">
-  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://outdunproductions.com/contact">
+  <meta property="og:image" content="https://outdunproductions.com/banners/og_image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://outdunproductions.com/banners/og_image.png">
+  <meta name="twitter:image:alt" content="Outdun Productions - Contact Us">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="logos/outdun_favicon.png">
+  <link rel="apple-touch-icon" href="logos/outdun_favicon.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -29,7 +36,7 @@
         <a href="about.html">About</a>
         <a href="contact.html" class="active">Contact</a>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -39,7 +46,7 @@
 
   <!-- Page Header -->
   <section class="page-header">
-    <img class="page-header__bg" loading="lazy" src="banners/light_leak_bw_banner.svg" alt="">
+    <img class="page-header__bg" loading="lazy" src="banners/light_leak_bw_banner.svg" alt="Outdun Productions contact page header">
     <div class="container">
       <h1 class="page-header__title">Contact</h1>
       <p class="page-header__desc">Have a project in mind? We'd love to hear about it. Reach out and let's start a conversation.</p>
@@ -175,9 +182,9 @@
         <div class="footer__social">
           <p class="footer__heading">Follow Us</p>
           <div class="footer__social-links">
-            <a href="https://www.instagram.com/outdunproductions" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.instagram.com/outdunproductions" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
 
-            <a href="https://www.linkedin.com/company/outdun-productions" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.linkedin.com/company/outdun-productions" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
       </div>
@@ -188,5 +195,25 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://outdunproductions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://outdunproductions.com/contact"
+      }
+    ]
+  }
+  </script>
 </body>
 </html>

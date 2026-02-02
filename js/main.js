@@ -2,14 +2,21 @@
    OUTDUN PRODUCTIONS - Main JavaScript
    ============================================ */
 
-// --- Nav Scroll Effect ---
+// --- Nav Scroll Effect (debounced) ---
 const nav = document.querySelector('.nav');
 if (nav) {
+  let navTicking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+    if (!navTicking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        navTicking = false;
+      });
+      navTicking = true;
     }
   });
 }
@@ -20,9 +27,10 @@ const navLinks = document.getElementById('navLinks');
 
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
+    const isOpen = navToggle.classList.toggle('active');
     navLinks.classList.toggle('open');
     document.body.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
 
   // Close menu when a link is clicked
@@ -31,22 +39,30 @@ if (navToggle && navLinks) {
       navToggle.classList.remove('active');
       navLinks.classList.remove('open');
       document.body.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
-// --- Back to Top Button ---
+// --- Back to Top Button (debounced) ---
 const backToTop = document.createElement('button');
 backToTop.className = 'back-to-top';
 backToTop.setAttribute('aria-label', 'Back to top');
 backToTop.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>';
 document.body.appendChild(backToTop);
 
+let bttTicking = false;
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTop.classList.add('visible');
-  } else {
-    backToTop.classList.remove('visible');
+  if (!bttTicking) {
+    requestAnimationFrame(() => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+      bttTicking = false;
+    });
+    bttTicking = true;
   }
 });
 
@@ -73,14 +89,19 @@ const fadeObserver = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => fadeObserver.observe(el));
 
-// --- Video Thumbnail Click-to-Play (YouTube IFrame API) ---
+// --- Video Thumbnail Click-to-Play (YouTube IFrame API - Lazy Loaded) ---
 var ytApiReady = false;
+var ytApiLoading = false;
 var pendingPlayers = [];
 
-var tag = document.createElement('script');
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+function loadYouTubeAPI() {
+  if (ytApiLoading || ytApiReady) return;
+  ytApiLoading = true;
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
 
 window.onYouTubeIframeAPIReady = function() {
   ytApiReady = true;
@@ -101,6 +122,8 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
     playerDiv.id = 'yt-player-' + playerCount;
     thumb.remove();
     embed.appendChild(playerDiv);
+
+    loadYouTubeAPI();
 
     function createPlayer() {
       activePlayers.forEach(function(p) {

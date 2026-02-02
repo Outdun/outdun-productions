@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 400" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <!-- Blur filters for bokeh effect -->
+        <filter id="blur1">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+        </filter>
+        <filter id="blur2">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="25"/>
+        </filter>
+        <filter id="blur3">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
+        </filter>
+        <filter id="blur4">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="45"/>
+        </filter>
+        
+        <!-- Radial gradients for realistic bokeh circles -->
+        <radialGradient id="bokeh-gradient-1">
+            <stop offset="0%" style="stop-color:#ff6b9d; stop-opacity:0.8"/>
+            <stop offset="70%" style="stop-color:#ff6b9d; stop-opacity:0.4"/>
+            <stop offset="100%" style="stop-color:#ff6b9d; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="bokeh-gradient-2">
+            <stop offset="0%" style="stop-color:#c44dff; stop-opacity:0.7"/>
+            <stop offset="70%" style="stop-color:#c44dff; stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#c44dff; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="bokeh-gradient-3">
+            <stop offset="0%" style="stop-color:#4d9fff; stop-opacity:0.75"/>
+            <stop offset="70%" style="stop-color:#4d9fff; stop-opacity:0.35"/>
+            <stop offset="100%" style="stop-color:#4d9fff; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="bokeh-gradient-4">
+            <stop offset="0%" style="stop-color:#ffd84d; stop-opacity:0.6"/>
+            <stop offset="70%" style="stop-color:#ffd84d; stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#ffd84d; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="bokeh-gradient-5">
+            <stop offset="0%" style="stop-color:#4dffb8; stop-opacity:0.65"/>
+            <stop offset="70%" style="stop-color:#4dffb8; stop-opacity:0.32"/>
+            <stop offset="100%" style="stop-color:#4dffb8; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="bokeh-gradient-6">
+            <stop offset="0%" style="stop-color:#ff8c4d; stop-opacity:0.7"/>
+            <stop offset="70%" style="stop-color:#ff8c4d; stop-opacity:0.35"/>
+            <stop offset="100%" style="stop-color:#ff8c4d; stop-opacity:0"/>
+        </radialGradient>
+        
+        <linearGradient id="dark-overlay" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#000000; stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0.6"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Black background -->
+    <rect width="1920" height="400" fill="#000000"/>
+    
+    <!-- Layer 1: Most blurred (background) -->
+    <g filter="url(#blur4)">
+        <circle cx="150" cy="320" r="100" fill="url(#bokeh-gradient-3)"/>
+        <circle cx="1750" cy="280" r="120" fill="url(#bokeh-gradient-1)"/>
+        <circle cx="850" cy="350" r="90" fill="url(#bokeh-gradient-5)"/>
+        <circle cx="1400" cy="340" r="110" fill="url(#bokeh-gradient-4)"/>
+    </g>
+    
+    <!-- Layer 2: Medium blur (middle ground) -->
+    <g filter="url(#blur3)">
+        <circle cx="420" cy="180" r="85" fill="url(#bokeh-gradient-2)"/>
+        <circle cx="1200" cy="120" r="95" fill="url(#bokeh-gradient-6)"/>
+        <circle cx="680" cy="280" r="70" fill="url(#bokeh-gradient-1)"/>
+        <circle cx="1580" cy="150" r="80" fill="url(#bokeh-gradient-3)"/>
+        <circle cx="280" cy="90" r="60" fill="url(#bokeh-gradient-4)"/>
+        <circle cx="950" cy="60" r="75" fill="url(#bokeh-gradient-5)"/>
+        <circle cx="1820" cy="100" r="65" fill="url(#bokeh-gradient-2)"/>
+    </g>
+    
+    <!-- Layer 3: Light blur (foreground) -->
+    <g filter="url(#blur2)">
+        <circle cx="580" cy="220" r="55" fill="url(#bokeh-gradient-4)"/>
+        <circle cx="1350" cy="240" r="60" fill="url(#bokeh-gradient-1)"/>
+        <circle cx="200" cy="180" r="50" fill="url(#bokeh-gradient-6)"/>
+        <circle cx="1650" cy="200" r="55" fill="url(#bokeh-gradient-5)"/>
+        <circle cx="900" cy="180" r="48" fill="url(#bokeh-gradient-3)"/>
+        <circle cx="1100" cy="300" r="52" fill="url(#bokeh-gradient-2)"/>
+        <circle cx="450" cy="320" r="45" fill="url(#bokeh-gradient-3)"/>
+        <circle cx="1500" cy="80" r="50" fill="url(#bokeh-gradient-4)"/>
+    </g>
+    
+    <!-- Layer 4: Slight blur (closest) -->
+    <g filter="url(#blur1)">
+        <circle cx="320" cy="260" r="38" fill="url(#bokeh-gradient-5)"/>
+        <circle cx="760" cy="140" r="42" fill="url(#bokeh-gradient-1)"/>
+        <circle cx="1280" cy="180" r="40" fill="url(#bokeh-gradient-6)"/>
+        <circle cx="510" cy="110" r="35" fill="url(#bokeh-gradient-2)"/>
+        <circle cx="1450" cy="260" r="38" fill="url(#bokeh-gradient-3)"/>
+        <circle cx="1050" cy="240" r="36" fill="url(#bokeh-gradient-4)"/>
+        <circle cx="140" cy="140" r="32" fill="url(#bokeh-gradient-1)"/>
+        <circle cx="1720" cy="180" r="40" fill="url(#bokeh-gradient-5)"/>
+        <circle cx="640" cy="80" r="34" fill="url(#bokeh-gradient-6)"/>
+        <circle cx="1860" cy="240" r="36" fill="url(#bokeh-gradient-2)"/>
+    </g>
+    
+    <!-- Subtle dark gradient overlay for depth -->
+    <rect width="1920" height="400" fill="url(#dark-overlay)"/>
+</svg>
