@@ -54,19 +54,77 @@ const fadeObserver = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => fadeObserver.observe(el));
 
-// --- Video Thumbnail Click-to-Play ---
+// --- Video Thumbnail Click-to-Play (YouTube IFrame API) ---
+var ytApiReady = false;
+var pendingPlayers = [];
+
+var tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+window.onYouTubeIframeAPIReady = function() {
+  ytApiReady = true;
+  pendingPlayers.forEach(function(fn) { fn(); });
+  pendingPlayers = [];
+};
+
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var playerCount = 0;
+var activePlayers = [];
+
 document.querySelectorAll('.video-card__thumb').forEach(thumb => {
   thumb.addEventListener('click', () => {
     const videoId = thumb.dataset.video;
     const embed = thumb.closest('.video-card__embed');
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&modestbranding=1&rel=0';
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-    iframe.setAttribute('allowfullscreen', '');
+    const playerDiv = document.createElement('div');
+    playerCount++;
+    playerDiv.id = 'yt-player-' + playerCount;
     thumb.remove();
-    embed.appendChild(iframe);
+    embed.appendChild(playerDiv);
+
+    function createPlayer() {
+      activePlayers.forEach(function(p) {
+        try { p.pauseVideo(); } catch(e) {}
+      });
+
+      var player = new YT.Player(playerDiv.id, {
+        videoId: videoId,
+        playerVars: {
+          autoplay: 1,
+          modestbranding: 1,
+          rel: 0,
+          playsinline: 1,
+          mute: isMobile ? 1 : 0
+        },
+        events: {
+          onReady: function(event) {
+            activePlayers.forEach(function(p) {
+              try { p.pauseVideo(); } catch(e) {}
+            });
+            activePlayers.push(player);
+            event.target.playVideo();
+            if (isMobile) {
+              var unmuteBtn = document.createElement('button');
+              unmuteBtn.className = 'video-unmute';
+              unmuteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg> Tap to unmute';
+              embed.appendChild(unmuteBtn);
+              unmuteBtn.addEventListener('click', function() {
+                player.unMute();
+                player.setVolume(100);
+                unmuteBtn.remove();
+              });
+            }
+          }
+        }
+      });
+    }
+
+    if (ytApiReady) {
+      createPlayer();
+    } else {
+      pendingPlayers.push(createPlayer);
+    }
   });
 });
 

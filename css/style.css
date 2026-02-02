@@ -426,6 +426,33 @@ ul {
   fill: rgba(255, 255, 255, 0.9);
 }
 
+/* Unmute button for mobile autoplay */
+.video-unmute {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.video-unmute svg {
+  width: 22px;
+  height: 22px;
+}
+
 /* Placeholder shown when no YouTube embed is set */
 .video-card__placeholder {
   position: absolute;
