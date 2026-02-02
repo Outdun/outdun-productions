@@ -22,6 +22,7 @@ if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navLinks.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
   });
 
   // Close menu when a link is clicked
@@ -29,6 +30,7 @@ if (navToggle && navLinks) {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
       navLinks.classList.remove('open');
+      document.body.classList.remove('menu-open');
     });
   });
 }
