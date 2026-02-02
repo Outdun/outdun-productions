@@ -1015,6 +1015,31 @@ ul {
 }
 
 @media (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+
+  .nav__links.open a {
+    animation: menuFadeIn 0.3s ease both;
+  }
+
+  .nav__links.open a:nth-child(1) { animation-delay: 0.05s; }
+  .nav__links.open a:nth-child(2) { animation-delay: 0.1s; }
+  .nav__links.open a:nth-child(3) { animation-delay: 0.15s; }
+  .nav__links.open a:nth-child(4) { animation-delay: 0.2s; }
+
+  @keyframes menuFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .nav__links {
     position: fixed;
     top: var(--nav-height);
@@ -1024,7 +1049,8 @@ ul {
     background: rgba(0, 0, 0, 0.6);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 20vh;
     gap: 36px;
     display: none;
     z-index: 999;
@@ -1045,6 +1071,7 @@ ul {
   body.menu-open .footer,
   body.menu-open .page-header .container,
   body.menu-open .hero__overlay {
+    animation: none;
     opacity: 0;
     transition: opacity 0.2s ease;
   }
