@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 400" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <!-- Light leak gradients -->
+        <radialGradient id="leak1" cx="30%" cy="40%">
+            <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0.9"/>
+            <stop offset="40%" style="stop-color:#e8e8e8; stop-opacity:0.5"/>
+            <stop offset="70%" style="stop-color:#cccccc; stop-opacity:0.2"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="leak2" cx="70%" cy="60%">
+            <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0.8"/>
+            <stop offset="35%" style="stop-color:#d9d9d9; stop-opacity:0.45"/>
+            <stop offset="65%" style="stop-color:#b8b8b8; stop-opacity:0.15"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0"/>
+        </radialGradient>
+        
+        <radialGradient id="leak3" cx="50%" cy="30%">
+            <stop offset="0%" style="stop-color:#f5f5f5; stop-opacity:0.7"/>
+            <stop offset="45%" style="stop-color:#d0d0d0; stop-opacity:0.35"/>
+            <stop offset="80%" style="stop-color:#a8a8a8; stop-opacity:0.1"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0"/>
+        </radialGradient>
+        
+        <!-- Soft linear gradients for streaks -->
+        <linearGradient id="streak1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0"/>
+            <stop offset="30%" style="stop-color:#e0e0e0; stop-opacity:0.4"/>
+            <stop offset="50%" style="stop-color:#f8f8f8; stop-opacity:0.6"/>
+            <stop offset="70%" style="stop-color:#d5d5d5; stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0"/>
+        </linearGradient>
+        
+        <linearGradient id="streak2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#000000; stop-opacity:0"/>
+            <stop offset="25%" style="stop-color:#c8c8c8; stop-opacity:0.35"/>
+            <stop offset="55%" style="stop-color:#eeeeee; stop-opacity:0.55"/>
+            <stop offset="75%" style="stop-color:#d0d0d0; stop-opacity:0.25"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0"/>
+        </linearGradient>
+        
+        <linearGradient id="streak3" x1="20%" y1="100%" x2="80%" y2="0%">
+            <stop offset="0%" style="stop-color:#000000; stop-opacity:0"/>
+            <stop offset="35%" style="stop-color:#dadada; stop-opacity:0.3"/>
+            <stop offset="60%" style="stop-color:#f2f2f2; stop-opacity:0.5"/>
+            <stop offset="85%" style="stop-color:#c5c5c5; stop-opacity:0.2"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0"/>
+        </linearGradient>
+        
+        <!-- Blur filters -->
+        <filter id="blur-soft">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="25"/>
+        </filter>
+        <filter id="blur-medium">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="40"/>
+        </filter>
+        <filter id="blur-heavy">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="60"/>
+        </filter>
+        
+        <!-- Vignette gradient -->
+        <radialGradient id="vignette" cx="50%" cy="50%">
+            <stop offset="0%" style="stop-color:#000000; stop-opacity:0"/>
+            <stop offset="60%" style="stop-color:#000000; stop-opacity:0.2"/>
+            <stop offset="100%" style="stop-color:#000000; stop-opacity:0.7"/>
+        </radialGradient>
+    </defs>
+    
+    <!-- Black background -->
+    <rect width="1920" height="400" fill="#000000"/>
+    
+    <!-- Main light leaks - heavily blurred -->
+    <g filter="url(#blur-heavy)">
+        <ellipse cx="200" cy="150" rx="280" ry="320" fill="url(#leak1)"/>
+        <ellipse cx="1650" cy="280" rx="350" ry="380" fill="url(#leak2)"/>
+    </g>
+    
+    <!-- Secondary light leaks - medium blur -->
+    <g filter="url(#blur-medium)">
+        <ellipse cx="800" cy="250" rx="200" ry="240" fill="url(#leak3)"/>
+        <ellipse cx="1200" cy="100" rx="180" ry="220" fill="url(#leak1)"/>
+        <ellipse cx="450" cy="320" rx="160" ry="190" fill="url(#leak2)"/>
+    </g>
+    
+    <!-- Light streaks -->
+    <g filter="url(#blur-soft)">
+        <path d="M -100,0 L 600,400 L 500,400 L -150,0 Z" fill="url(#streak1)"/>
+        <path d="M 1920,0 L 1300,400 L 1400,400 L 2000,0 Z" fill="url(#streak2)"/>
+        <path d="M 800,-50 L 1100,450 L 1000,450 L 700,-50 Z" fill="url(#streak3)"/>
+    </g>
+    
+    <!-- Soft glow spots -->
+    <g filter="url(#blur-soft)">
+        <circle cx="350" cy="80" r="70" fill="#ffffff" opacity="0.15"/>
+        <circle cx="1450" cy="200" r="90" fill="#ffffff" opacity="0.18"/>
+        <circle cx="950" cy="350" r="60" fill="#ffffff" opacity="0.12"/>
+        <circle cx="1750" cy="120" r="50" fill="#ffffff" opacity="0.14"/>
+    </g>
+    
+    <!-- Vignette overlay for depth -->
+    <rect width="1920" height="400" fill="url(#vignette)"/>
+</svg>

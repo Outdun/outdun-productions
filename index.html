@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outdun Productions | Dream | Create | Impact</title>
+  <meta name="description" content="Outdun Productions is a video production company based in Squamish, BC. We craft compelling visual stories that inspire and create impact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav__logo"><svg class="nav__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1076.23 1080.7" aria-label="Outdun Productions logo"><g fill="#fff" transform="rotate(-0.46 538 540)"><path d="M220.18,103.76c-14.8,10.84-29.05,22.37-42.64,34.63l6.9,809.99c13.81,12.04,28.23,23.38,43.23,33.97l-7.48-878.59Z"/><path d="M118.93,200.25c-10.94,13.52-21.23,27.59-30.84,42.15l5.14,603.63c9.86,14.39,20.39,28.26,31.56,41.6l-5.85-687.38Z"/><path d="M18.53,395.32C8.75,430.61,2.43,467.33,0,505.13l0.68,79.43c3.06,37.87,9.96,74.63,20.4,109.89l-2.55-299.13Z"/><path d="M423.53,12.22c-22.65,4.89-44.76,11.21-66.25,18.86l8.7,1021.57c21.62,7.28,43.81,13.3,66.56,17.8L423.53,12.22Z"/><path d="M537.67,0l9.2,1080.54c293.2-5.04,529.37-244.86,529.37-540.15S835.13,0.1,537.67,0Z"/><path d="M525.49,0.3c-26.55,0.58-52.62,3.06-78.08,7.36l9.08,1067.02c25.52,3.86,51.64,5.89,78.2,6.02L525.49,0.3Z"/><path d="M321.74,45.2c-18.74,8.22-36.89,17.51-54.44,27.74l8,939.52c17.72,9.92,36.02,18.92,54.9,26.82l-8.46-994.07Z"/></g></svg>Outdun <span>Productions</span></a>
+      <div class="nav__links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!--
+      BACKGROUND VIDEO:
+      Replace "hero-video.mp4" below with your video filename.
+      Drop your video file into the outdun-productions folder.
+      Best format: MP4 (H.264), 1920x1080, under 15MB for fast loading.
+    -->
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="videos/website_homepage_demo_reel_v1 (1080p).mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__tagline">Dream <span class="divider">|</span> Create <span class="divider">|</span> Impact</p>
+      <h1 class="hero__title">Stories that move people</h1>
+      <p class="hero__subtitle">We are a video production company crafting compelling visual narratives that inspire action, spark emotion, and create lasting impact.</p>
+      <a href="work.html" class="hero__cta">
+        View Our Work
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Work Section -->
+  <section class="section section--border">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label">Selected Work</p>
+        <h2 class="section__title">Featured Projects</h2>
+        <p class="section__subtitle">A selection of our recent video productions spanning brand films, event coverage, and promotional content.</p>
+      </div>
+
+      <div class="featured-grid stagger-children">
+
+        <!-- Featured Video 1 -->
+        <div class="video-card fade-in">
+          <div class="video-card__embed">
+            <div class="video-card__thumb" data-video="bYD4HjYChJI">
+              <img src="https://img.youtube.com/vi/bYD4HjYChJI/hqdefault.jpg" alt="Outdun Productions Reel">
+              <div class="video-card__play">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card__info">
+            <h3 class="video-card__title">Outdun Productions Reel</h3>
+            <p class="video-card__category">Showreel</p>
+          </div>
+        </div>
+
+        <!-- Featured Video 2 -->
+        <div class="video-card fade-in">
+          <div class="video-card__embed">
+            <div class="video-card__thumb" data-video="8xFlXaQ1ilg">
+              <img src="https://img.youtube.com/vi/8xFlXaQ1ilg/hqdefault.jpg" alt="Future Of Our Nation">
+              <div class="video-card__play">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card__info">
+            <h3 class="video-card__title">Future Of Our Nation</h3>
+            <p class="video-card__category">Documentary</p>
+          </div>
+        </div>
+
+        <!-- Featured Video 3 -->
+        <div class="video-card fade-in">
+          <div class="video-card__embed">
+            <div class="video-card__thumb" data-video="SzRgPw1oEeQ">
+              <img src="https://img.youtube.com/vi/SzRgPw1oEeQ/hqdefault.jpg" alt="Superbowl Concert Promo">
+              <div class="video-card__play">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="video-card__info">
+            <h3 class="video-card__title">Superbowl Concert Promo</h3>
+            <p class="video-card__category">Event Promo</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="work.html" class="hero__cta">
+          View All Projects
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="section section--border">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-content__text fade-in">
+          <p class="section__label" style="text-align: left;">About Us</p>
+          <h2 class="section__title" style="text-align: left; margin-bottom: 24px;">Crafting visual stories from the mountains to the world</h2>
+          <p>Based in Squamish, BC, Outdun Productions brings together creativity and technical expertise to produce video content that resonates. From brand films to event coverage, we help our clients communicate their message with clarity and impact.</p>
+          <p>We believe every project deserves a story worth telling. Our team works closely with clients to understand their vision and translate it into powerful visual narratives.</p>
+          <div style="margin-top: 32px;">
+            <a href="about.html" class="hero__cta">
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="about-values fade-in">
+          <div class="about-value">
+            <svg class="about-value__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h14a4 4 0 0 0 0-8 5 5 0 0 0-5-5 7 7 0 0 0-7 6 4 4 0 0 0-2 7z"/></svg>
+            <h3 class="about-value__title">Dream</h3>
+            <p class="about-value__desc">Every great project starts with a vision. We help you define and shape the story you want to tell.</p>
+          </div>
+          <div class="about-value">
+            <svg class="about-value__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+            <h3 class="about-value__title">Create</h3>
+            <p class="about-value__desc">From pre-production through post, we bring your vision to life with precision and creative excellence.</p>
+          </div>
+          <div class="about-value">
+            <svg class="about-value__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <h3 class="about-value__title">Impact</h3>
+            <p class="about-value__desc">The final product isn't just a video. It's a tool that drives results and creates lasting impressions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section--border">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label">Get in Touch</p>
+        <h2 class="section__title">Ready to start your project?</h2>
+        <p class="section__subtitle">Let's discuss how we can bring your vision to life. Reach out to start a conversation about your next video production.</p>
+        <div style="margin-top: 36px;">
+          <a href="contact.html" class="hero__cta">
+            Contact Us
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">&copy; 2026 Outdun Productions. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
