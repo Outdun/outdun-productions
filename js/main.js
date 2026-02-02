@@ -35,6 +35,25 @@ if (navToggle && navLinks) {
   });
 }
 
+// --- Back to Top Button ---
+const backToTop = document.createElement('button');
+backToTop.className = 'back-to-top';
+backToTop.setAttribute('aria-label', 'Back to top');
+backToTop.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>';
+document.body.appendChild(backToTop);
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // --- Scroll Fade-In Animation ---
 const fadeElements = document.querySelectorAll('.fade-in');
 

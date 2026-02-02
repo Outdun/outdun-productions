@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outdun Productions | Dream | Create | Impact</title>
   <meta name="description" content="Outdun Productions is a video production company based in Squamish, BC. We craft compelling visual stories that inspire and create impact.">
+  <meta property="og:title" content="Outdun Productions | Dream | Create | Impact">
+  <meta property="og:description" content="Video production company based in Squamish, BC. We craft compelling visual stories that inspire and create impact.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://outdunproductions.com">
+  <meta property="og:image" content="https://outdunproductions.com/logos/outdun_favicon.png">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="logos/outdun_favicon.png">
+  <link rel="preload" as="video" href="videos/website_homepage_demo_reel_1080p_Compressed.mp4">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -71,7 +78,7 @@
         <div class="video-card fade-in">
           <div class="video-card__embed">
             <div class="video-card__thumb" data-video="bYD4HjYChJI">
-              <img src="https://img.youtube.com/vi/bYD4HjYChJI/hqdefault.jpg" alt="Outdun Productions Reel">
+              <img loading="lazy" src="https://img.youtube.com/vi/bYD4HjYChJI/hqdefault.jpg" alt="Outdun Productions Reel">
               <div class="video-card__play">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
               </div>
@@ -87,7 +94,7 @@
         <div class="video-card fade-in">
           <div class="video-card__embed">
             <div class="video-card__thumb" data-video="8xFlXaQ1ilg">
-              <img src="https://img.youtube.com/vi/8xFlXaQ1ilg/hqdefault.jpg" alt="Future Of Our Nation">
+              <img loading="lazy" src="https://img.youtube.com/vi/8xFlXaQ1ilg/hqdefault.jpg" alt="Future Of Our Nation">
               <div class="video-card__play">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
               </div>
@@ -103,7 +110,7 @@
         <div class="video-card fade-in">
           <div class="video-card__embed">
             <div class="video-card__thumb" data-video="SzRgPw1oEeQ">
-              <img src="https://img.youtube.com/vi/SzRgPw1oEeQ/hqdefault.jpg" alt="Superbowl Concert Promo">
+              <img loading="lazy" src="https://img.youtube.com/vi/SzRgPw1oEeQ/hqdefault.jpg" alt="Superbowl Concert Promo">
               <div class="video-card__play">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
               </div>
@@ -189,16 +196,58 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__copy">&copy; 2026 Outdun Productions. All rights reserved.</p>
-      <div class="footer__links">
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__name">Outdun Productions</p>
+          <p class="footer__tagline">Dream | Create | Impact</p>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__heading">Pages</p>
+          <a href="index.html">Home</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__heading">Contact</p>
+          <a href="mailto:info@outdunproductions.com">info@outdunproductions.com</a>
+          <a href="tel:+16049026757">604-902-6757</a>
+          <p>Squamish, BC</p>
+        </div>
+        <div class="footer__social">
+          <p class="footer__heading">Follow Us</p>
+          <div class="footer__social-links">
+            <a href="https://www.instagram.com/outdunproductions" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+
+            <a href="https://www.linkedin.com/company/outdun-productions" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Outdun Productions. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoProductionCompany",
+    "name": "Outdun Productions",
+    "description": "Video production company based in Squamish, BC crafting compelling visual stories that inspire and create impact.",
+    "url": "https://outdunproductions.com",
+    "telephone": "+1-604-902-6757",
+    "email": "info@outdunproductions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Squamish",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "image": "https://outdunproductions.com/logos/outdun_favicon.png"
+  }
+  </script>
 </body>
 </html>
