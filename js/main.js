@@ -117,6 +117,13 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
   thumb.addEventListener('click', () => {
     const videoId = thumb.dataset.video;
     const embed = thumb.closest('.video-card__embed');
+    const videoTitle = thumb.closest('.video-card').querySelector('.video-card__title');
+    if (typeof gtag === 'function') {
+      gtag('event', 'video_play', {
+        video_id: videoId,
+        video_title: videoTitle ? videoTitle.textContent : videoId
+      });
+    }
     const playerDiv = document.createElement('div');
     playerCount++;
     playerDiv.id = 'yt-player-' + playerCount;
@@ -193,6 +200,12 @@ if (contactForm && formStatus) {
       if (response.ok) {
         formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
         formStatus.className = 'form-status form-status--success';
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submission', {
+            form_name: 'contact',
+            project_type: contactForm.querySelector('#project-type').value || 'not specified'
+          });
+        }
         contactForm.reset();
       } else {
         throw new Error('Form submission failed');
