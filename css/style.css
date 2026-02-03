@@ -115,9 +115,10 @@ ul {
 }
 
 .nav__logo .nav__logo-icon {
-  height: 48px;
-  width: auto;
+  height: 36px;
+  width: 36px;
   display: block;
+  flex-shrink: 0;
 }
 
 .nav__logo span {
