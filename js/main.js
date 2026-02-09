@@ -177,7 +177,9 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
                 if (remaining > 0) {
                   endTimer = setTimeout(function() {
                     activePlayers = activePlayers.filter(function(p) { return p !== player; });
+                    var iframe = player.getIframe();
                     player.destroy();
+                    if (iframe && iframe.parentNode) iframe.parentNode.removeChild(iframe);
                     thumb.style.display = '';
                   }, remaining);
                 }
