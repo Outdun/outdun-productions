@@ -168,6 +168,15 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
           },
           onStateChange: (function() {
             var endTimer = null;
+            function restoreThumb() {
+              clearTimeout(endTimer);
+              activePlayers = activePlayers.filter(function(p) { return p !== player; });
+              try { player.destroy(); } catch(e) {}
+              Array.from(embed.children).forEach(function(child) {
+                if (child !== thumb) embed.removeChild(child);
+              });
+              thumb.style.display = '';
+            }
             return function(event) {
               if (event.data === YT.PlayerState.PLAYING) {
                 clearTimeout(endTimer);
@@ -175,16 +184,10 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
                 var current = player.getCurrentTime();
                 var remaining = (duration - current - 0.5) * 1000;
                 if (remaining > 0) {
-                  endTimer = setTimeout(function() {
-                    activePlayers = activePlayers.filter(function(p) { return p !== player; });
-                    player.destroy();
-                    // Remove all elements except the thumbnail
-                    Array.from(embed.children).forEach(function(child) {
-                      if (child !== thumb) embed.removeChild(child);
-                    });
-                    thumb.style.display = '';
-                  }, remaining);
+                  endTimer = setTimeout(restoreThumb, remaining);
                 }
+              } else if (event.data === YT.PlayerState.ENDED) {
+                restoreThumb();
               } else {
                 clearTimeout(endTimer);
               }
