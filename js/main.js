@@ -98,7 +98,7 @@ function loadYouTubeAPI() {
   if (ytApiLoading || ytApiReady) return;
   ytApiLoading = true;
   var tag = document.createElement('script');
-  tag.src = 'https://www.youtube-nocookie.com/iframe_api';
+  tag.src = 'https://www.youtube.com/iframe_api';
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
