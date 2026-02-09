@@ -127,7 +127,7 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
     const playerDiv = document.createElement('div');
     playerCount++;
     playerDiv.id = 'yt-player-' + playerCount;
-    thumb.remove();
+    thumb.style.display = 'none';
     embed.appendChild(playerDiv);
 
     loadYouTubeAPI();
@@ -176,8 +176,9 @@ document.querySelectorAll('.video-card__thumb').forEach(thumb => {
                 var remaining = (duration - current - 0.5) * 1000;
                 if (remaining > 0) {
                   endTimer = setTimeout(function() {
-                    player.pauseVideo();
-                    player.seekTo(0, true);
+                    activePlayers = activePlayers.filter(function(p) { return p !== player; });
+                    player.destroy();
+                    thumb.style.display = '';
                   }, remaining);
                 }
               } else {
