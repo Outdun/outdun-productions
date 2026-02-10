@@ -1,0 +1,9 @@
+# Domain redirects - 301 permanent redirects to outdunproductions.com
+https://iandunsmore.com/* https://outdunproductions.com/:splat 301!
+https://www.iandunsmore.com/* https://outdunproductions.com/:splat 301!
+https://outdoneproductions.com/* https://outdunproductions.com/:splat 301!
+https://www.outdoneproductions.com/* https://outdunproductions.com/:splat 301!
+http://iandunsmore.com/* https://outdunproductions.com/:splat 301!
+http://www.iandunsmore.com/* https://outdunproductions.com/:splat 301!
+http://outdoneproductions.com/* https://outdunproductions.com/:splat 301!
+http://www.outdoneproductions.com/* https://outdunproductions.com/:splat 301!
